@@ -1,0 +1,26 @@
+.movieCard{
+    width: 300px;
+    margin: auto;
+    /* display: flex; */
+    background-color: rgb(222, 241, 137);
+    justify-content: center;
+    margin-bottom: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.flexbox{
+    display: flex;
+    flex-wrap:wrap;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.header{
+    background-color: rgb(190, 190, 233);
+    justify-content: center;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 50px;
+    color: rgb(192, 143, 98);
+}
