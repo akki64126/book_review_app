@@ -1,0 +1,19 @@
+.img{
+    height: 300px;
+    width: 300px;
+}
+.main-div{
+    display: flex;
+    flex-wrap:wrap;
+    /* justify-content: center; */
+}
+.content-div{
+    justify-content: center;
+    margin: auto;
+    padding: 50px;
+}
+.img-div{
+    justify-content: center;
+    margin: auto;
+    padding: 50px;
+}

@@ -1,13 +1,12 @@
 import React from 'react'
-import pic from './1.jpg'
-import './movieCard.css'
+import './bookimg.css'
 
-function Bookimg() {
+
+function Bookimg(props) {
   return (
     <div>
-        <img src={pic}/>
+      <img src = {props.link}/>
     </div>
   )
 }
-
 export default Bookimg
