@@ -5,15 +5,29 @@
 .main-div{
     display: flex;
     flex-wrap:wrap;
-    /* justify-content: center; */
 }
 .content-div{
     justify-content: center;
     margin: auto;
-    padding: 50px;
+    padding: 25px;
 }
 .img-div{
     justify-content: center;
     margin: auto;
-    padding: 50px;
+    padding: 25px;
+}
+#comment{
+    float: left;
+    margin: auto;
+    margin-left: 10%;
+    height: 60px;
+    width: 250px;
+    background-color: rgb(198, 248, 242);
+    
+}
+#add_comment{
+    float: left;
+    height: 30px;
+    background-color: rgb(6, 66, 59);
+    color: white;
 }

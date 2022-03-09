@@ -19,6 +19,7 @@ function Page2() {
       
     e.preventDefault();
     var value = document.getElementById("comment").value;
+    var inputid = document.getElementById("comment")
     console.log(value)
     switch(value){
         case "poor":
@@ -34,6 +35,7 @@ function Page2() {
         rating: 4,
       })
     );
+    inputid.value = ""
     const currStore = JSON.parse(localStorage.getItem("store"));
     const ans = currStore.map((ele) => {
       if (ele.id == id) {
@@ -81,10 +83,10 @@ function Page2() {
           </h1>
         </div>
       </div>
-    
+  
         <form onSubmit={(event) => handleSubmit(event, currentdata.id)}>
-        <input id="comment" type="text"></input>
-        <button  type="submit">Done</button>
+        <textarea id="comment" type="text" placeholder='Add Comment'></textarea>
+        <button  id='add_comment' type="submit">Done</button>
         </form>
         
         <div>

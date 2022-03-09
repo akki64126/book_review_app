@@ -26,10 +26,7 @@ const itemSlice = createSlice({
         }
       });
     },
-    updateRating: (state, action) => {
-      return state;
-    },
   },
 });
-export const { addBook, addComment, addRating } = itemSlice.actions;
+export const { addBook, addComment} = itemSlice.actions;
 export default itemSlice.reducer;

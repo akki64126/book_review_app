@@ -13,7 +13,7 @@ export default function MovieCard(props) {
   return (
       
       <div className='movieCard'> 
-        <Link to = {URL}>
+        <Link to = {URL} style={{ textDecoration: 'none',color: 'white'}}>
           <Bookimg link = {props.book.img} />
           <h2>Title: {props.book.title}</h2>
           <h2>Author: {props.book.author_name}</h2>
