@@ -10,8 +10,8 @@ import Modal from './Modal';
 
 
 function Page2() {
-    const [modal_input,setmodalinput] = useState(false) 
-    const [show, setShow] = useState(false);
+    // const [modal_input,setmodalinput] = useState(false) 
+    // const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   useSelector((ele) => ele.allBooks);
   
@@ -21,13 +21,25 @@ function Page2() {
     var value = document.getElementById("comment").value;
     var inputid = document.getElementById("comment")
     console.log(value)
-    switch(value){
-        case "poor":
-            value = "p**r"
-            setShow(true)
-            break
-    default:
-        
+    if(value=="poor"||value=="waste"||value=="disgusting"||value=="horrible"||value=="filthy"){
+       switch(value){
+           case "poor":
+               value = "p**r"
+               break
+            case "waste":
+                value = "w***e"
+                break
+            case "disgusting":
+                value = "d********g"
+                break
+            case "horrble":
+                value = "h*****e"
+                break
+            case "filthy":
+                value = "f****y"
+                break
+       }
+    }  
     dispatch(
       addComment({
         id: id,
@@ -55,7 +67,6 @@ function Page2() {
       }
     });
     localStorage.setItem("store", JSON.stringify(ans));
-    }
   };
   
   const [searchParams, setSearchParams] = useSearchParams();
@@ -97,11 +108,11 @@ function Page2() {
                 return <Comment comment={comment} />;
             })}
         </div>
-        <Modal
+        {/* <Modal
             setmodalinput={setmodalinput}
           onClose={() => setShow(false)}
           show={show}
-        ></Modal>
+        ></Modal> */}
     </div>
   );
 }
