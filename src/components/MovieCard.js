@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Bookimg from './Bookimg'
-import Rating from './Rating'
+import Rating1 from './Rating1'
 import './movieCard.css'
 import {Link,useSearchParams} from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
@@ -17,7 +17,7 @@ export default function MovieCard(props) {
           <Bookimg link = {props.book.img} />
           <h2>Title: {props.book.title}</h2>
           <h2>Author: {props.book.author_name}</h2>
-          <Rating datastar = {props.book.rating}/>
+          <Rating1 datastar = {props.book.rating}/>
         </Link>
       </div>
 

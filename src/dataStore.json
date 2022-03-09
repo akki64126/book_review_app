@@ -16,8 +16,7 @@
     "comment" : [{"comment_id":"1","desc":"","rating":3},
         {"comment_id":"2","desc":"","rating":3},
         {"comment_id":"3","desc":"","rating":3}]
-},
-{
+},{
     "id" : 3,
     "title" : "Civil War",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339218610l/13528747.jpg",
@@ -26,4 +25,14 @@
     "comment" : [{"comment_id":"1","desc":"","rating":2},
         {"comment_id":"2","desc":"","rating":2},
         {"comment_id":"3","desc":"","rating":2}]
-}]
+},{
+    "id" : 4,
+    "title" : "Civil War",
+    "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339218610l/13528747.jpg",
+    "author_name" : "Stuart Moore",
+    "rating" : 4,
+    "comment" : [{"comment_id":"1","desc":"","rating":2},
+        {"comment_id":"2","desc":"","rating":2},
+        {"comment_id":"3","desc":"","rating":2}]
+}
+]
