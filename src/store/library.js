@@ -2,16 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const itemSlice = createSlice({
     name: "library",
-    initialState: {allBooks:[],abcd:""},
+    initialState: {allBooks:[],allComments:"",allRatings:""},
     reducers: {
         addBook: (state,action)=>{
             state.allBooks = action.payload.allBooks
         },
-        setabcd : (state,action)=>{
-            state.abcd = action.payload.abcd
+        addComment: (state,action)=>{
+            state.allComments = action.payload.allComments
+        },
+        addRating: (state,action) =>{
+            state.allRatings = action.payload.allRatings
         }
     }
 })
-console.log(itemSlice.actions.setabcd)
-export const {addBook,setabcd} = itemSlice.actions
+export const {addBook,addComment,addRating} = itemSlice.actions
 export default itemSlice.reducer

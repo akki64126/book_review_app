@@ -8,6 +8,11 @@ import Rating from "./Rating";
 
 function Page2()
 {   
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        alert("done")
+    }
+
     const [searchParams, setSearchParams] = useSearchParams();
     const id = searchParams.get("id")
     const books = useSelector((element)=>{return element.allBooks})
@@ -26,6 +31,10 @@ function Page2()
                         <h1><Rating datastar = {currentdata.rating}/></h1>
                     </div>
                 </div>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" ></input>
+                    <button  type="submit" >Done</button>
+                </form>
                 <div>
                     <div><h1>Comments</h1></div>
                     {comments.map(comment=>{return <Comment comment = {comment}/>})}

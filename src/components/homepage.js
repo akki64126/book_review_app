@@ -21,7 +21,6 @@ function Homepage() {
     return (
         <div>
             <Header />
-            
             <div className="flexbox">
             {books.map(book=>{
                 return <MovieCard book = {book}/>

@@ -3,10 +3,10 @@
     "title" : "Harry Potter and the Chamber of Secrets",
     "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltzcooPkGcy1fKKqzSuO8U6S9XBpNDR9MuYc9SS_L5AbAn66O",
     "author_name" : "J.K. Rowling",
-    "rating" : 5,
+    "rating" : 4,
     "comment" : [{"comment_id":"1","desc":"good","rating":4},
                 {"comment_id":"2","desc":"vgood","rating":4},
-                {"comment_id":"3","desc":"halwa","rating":4}]
+                {"comment_id":"3","desc":"bad","rating":4}]
 },{
     "id" : 2,
     "title" : "Avengers-Everybody Wants to Rule the World",
