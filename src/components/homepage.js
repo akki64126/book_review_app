@@ -1,9 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import Rating from "./Rating1";
 import Header from "./Header";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { addBook } from "../store/library";
 import dataStore from "../dataStore.json";
 
@@ -21,10 +19,8 @@ function Homepage() {
     );
     localStorage.setItem("store", JSON.stringify(books));
   } else {
-    console.log(localStorage.getItem("store"));
     books = JSON.parse(localSt);
   }
-  console.log(books);
   return (
     <div>
       <Header />

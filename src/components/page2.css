@@ -17,17 +17,49 @@
     padding: 25px;
 }
 #comment{
-    float: left;
     margin: auto;
-    margin-left: 10%;
-    height: 60px;
-    width: 250px;
+    margin-left: 5%;
+    width: 50%;
     background-color: rgb(198, 248, 242);
     
 }
 #add_comment{
-    float: left;
+    text-align: center;
     height: 30px;
     background-color: rgb(6, 66, 59);
     color: white;
+    margin-top: 5px;
+    margin: auto;
+}
+.btn-div{
+    margin: auto;
+    text-align: center;
+    background-color: black;
+}
+#btn{
+    text-align: center;
+    margin: auto;
+    position: relative;
+    right: 44%;
+    background-color: #001306;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.comment-section{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+}
+.form-div{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
 }

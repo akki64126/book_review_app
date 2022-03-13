@@ -7,6 +7,9 @@ const itemSlice = createSlice({
     addBook: (state, action) => {
       state.allBooks = action.payload.allBooks;
     },
+    updateState:(state,action)=>{
+        state = action.payload.data
+    },
     addComment: (state, action) => {
       state.allBooks = state.allBooks.map((element) => {
         if (element.id === action.payload.id) {
@@ -15,9 +18,9 @@ const itemSlice = createSlice({
             comment: [
               ...element.comment,
               {
-                comment_id: element.comment.length,
+                comment_id: element.comment.length +1,
                 desc: action.payload.comment,
-                rating: action.payload.rating + 1,
+                rating: action.payload.rating,
               },
             ],
           };
@@ -28,5 +31,5 @@ const itemSlice = createSlice({
     },
   },
 });
-export const { addBook, addComment} = itemSlice.actions;
+export const { addBook, addComment,updateState} = itemSlice.actions;
 export default itemSlice.reducer;

@@ -8,6 +8,11 @@ import {Link,useSearchParams} from 'react-router-dom'
 
 
 export default function MovieCard(props) {
+  var total_sum = 0
+ props.book.comment.map((ele)=>{
+    return total_sum = total_sum+ele.rating
+  })
+  var avg_rating = total_sum/props.book.comment.length
   
   const URL = "/page2?id="+props.book.id
   return (
@@ -17,7 +22,7 @@ export default function MovieCard(props) {
           <Bookimg link = {props.book.img} />
           <h2>Title: {props.book.title}</h2>
           <h2>Author: {props.book.author_name}</h2>
-          <Rating1 datastar = {props.book.rating}/>
+          <Rating1 datastar = {avg_rating}/>
         </Link>
       </div>
 

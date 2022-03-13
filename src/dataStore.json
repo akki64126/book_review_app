@@ -3,43 +3,38 @@
     "title" : "Harry Potter and the Chamber of Secrets",
     "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltzcooPkGcy1fKKqzSuO8U6S9XBpNDR9MuYc9SS_L5AbAn66O",
     "author_name" : "J.K. Rowling",
-    "rating" : 4,
-    "comment" : [{"comment_id":"1","desc":"good","rating":4},
-                {"comment_id":"2","desc":"vgood","rating":4},
-                {"comment_id":"3","desc":"bad","rating":1}]
+    "comment" : [{"comment_id":1,"desc":"good","rating":4},
+                {"comment_id":2,"desc":"vgood","rating":4},
+                {"comment_id":3,"desc":"bad","rating":1}]
 },{
     "id" : 2,
     "title" : "Avengers-Everybody Wants to Rule the World",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420794424l/23153103.jpg",
     "author_name" : "Dan Abnett",
-    "rating" : 3,
-    "comment" : [{"comment_id":"1","desc":"Nice Movie","rating":3},
-        {"comment_id":"2","desc":"good","rating":3},
-        {"comment_id":"3","desc":"Very bad","rating":3}]
+    "comment" : [{"comment_id":1,"desc":"Nice Movie","rating":3},
+        {"comment_id":2,"desc":"good","rating":5},
+        {"comment_id":3,"desc":"Very bad","rating":3}]
 },{
     "id" : 3,
     "title" : "Civil War",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339218610l/13528747.jpg",
     "author_name" : "Stuart Moore",
-    "rating" : 2,
-    "comment" : [{"comment_id":"1","desc":"Nice Movie","rating":2},
-        {"comment_id":"2","desc":"Good ","rating":2},
-        {"comment_id":"3","desc":"Very bad","rating":2}]
+    "comment" : [{"comment_id":1,"desc":"Nice Movie","rating":2},
+        {"comment_id":2,"desc":"Good ","rating":2},
+        {"comment_id":3,"desc":"Very bad","rating":2}]
 },{
     "id" : 4,
     "title" : "Guardians of the Galaxy, Cosmic Avengers",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483317111l/17791477._SY475_.jpg",
     "author_name" : "Brian Michael Bendis ",
-    "rating" : 5,
-    "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
-        {"comment_id":"2","desc":"Good","rating":2},
-        {"comment_id":"3","desc":"Very bad","rating":2}]
+    "comment" : [{"comment_id":1,"desc":"Nice movie","rating":2},
+        {"comment_id":2,"desc":"Good","rating":2},
+        {"comment_id":3,"desc":"Very bad","rating":2}]
 },{
     "id" : 5,
     "title" : "Marvel Avengers Alliance",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1460560194l/29909667._SY475_.jpg",
     "author_name" : "Fabian Nicieza",
-    "rating" : 3.5,
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]
@@ -48,7 +43,6 @@
     "title" : "Thor-God of Thunder, Volume 1: The God Butcher",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409501392l/17251114.jpg",
     "author_name" : "Jason Aaron ",
-    "rating" : 3.5,
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]
@@ -57,7 +51,6 @@
     "title" : "Captain America: Winter Soldier, Volume 1",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1524855329l/371997._SY475_.jpg",
     "author_name" : " Ed Brubaker  ",
-    "rating" : 3.5,
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]
@@ -66,7 +59,6 @@
     "title" : "Thor-God of Thunder, Volume 1: The God Butcher",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409501392l/17251114.jpg",
     "author_name" : "Jason Aaron ",
-    "rating" : 3.5,
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]
@@ -75,7 +67,6 @@
     "title" : "Iron Man",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320435312l/2599400.jpg",
     "author_name" : "Peter David",
-    "rating" : 3.5,
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]
@@ -84,7 +75,22 @@
     "title" : "The Incredible Hulk- Planet Hulk",
     "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556937414l/630621._SY475_.jpg",
     "author_name" : "Greg Pak",
-    "rating" : 3.5,
+    "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
+        {"comment_id":"2","desc":"Good","rating":2},
+        {"comment_id":"3","desc":"Very bad","rating":2}]
+},{
+    "id" : 11,
+    "title" : "The Incredible Hulk- Planet Hulk",
+    "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556937414l/630621._SY475_.jpg",
+    "author_name" : "Greg Pak",
+    "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
+        {"comment_id":"2","desc":"Good","rating":2},
+        {"comment_id":"3","desc":"Very bad","rating":2}]
+},{
+    "id" : 12,
+    "title" : "The Incredible Hulk- Planet Hulk",
+    "img" : "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556937414l/630621._SY475_.jpg",
+    "author_name" : "Greg Pak",
     "comment" : [{"comment_id":"1","desc":"Nice movie","rating":2},
         {"comment_id":"2","desc":"Good","rating":2},
         {"comment_id":"3","desc":"Very bad","rating":2}]

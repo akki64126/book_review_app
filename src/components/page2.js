@@ -1,53 +1,70 @@
 import { Rating } from 'react-simple-star-rating'
-import React, {useState} from "react";
-import { addComment } from "../store/library";
+import React, {useEffect, useState} from "react";
+import { addComment,updateState } from "../store/library";
 import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Comment from "./Comment";
 import "./page2.css";
 import Rating1 from "./Rating1";
 import Modal from './Modal';
-
+import { RatingStar } from "rating-star";
 
 function Page2() {
-    // const [modal_input,setmodalinput] = useState(false) 
-    // const [show, setShow] = useState(false);
+
+  const [rating, setRating] = React.useState(0);
+
+  const onRatingChange = val => {
+    setRating(val);
+  };
+
   const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
   useSelector((ele) => ele.allBooks);
-  
+  useEffect(()=>{
+    const data = localStorage.getItem("store")
+    if(data!=null){
+      dispatch(updateState({data}))
+    }
+  },[])
   const handleSubmit = (e, id) => {
-      
     e.preventDefault();
     var value = document.getElementById("comment").value;
+    console.log(rating)
+
     var inputid = document.getElementById("comment")
-    console.log(value)
+
     if(value=="poor"||value=="waste"||value=="disgusting"||value=="horrible"||value=="filthy"){
+      setShow(true)
        switch(value){
            case "poor":
-               value = "p**r"
+            inputid.value = "p**r"
                break
             case "waste":
-                value = "w***e"
+                inputid.value = "w***e"
                 break
             case "disgusting":
-                value = "d********g"
+              inputid.value = "d********g"
                 break
             case "horrble":
-                value = "h*****e"
+              inputid.value = "h*****e"
                 break
             case "filthy":
-                value = "f****y"
+              inputid.value = "f****y"
                 break
        }
+       
     }  
+    else{
+      setShow(false)
     dispatch(
       addComment({
         id: id,
         comment: value,
-        rating: 4,
+        rating: rating,
       })
     );
     inputid.value = ""
+    setRating(0)
     const currStore = JSON.parse(localStorage.getItem("store"));
     const ans = currStore.map((ele) => {
       if (ele.id == id) {
@@ -56,9 +73,9 @@ function Page2() {
           comment: [
             ...ele.comment,
             {
-              id: id,
+              comment_id: ele.comment.length +1,
               desc: value,
-              rating: 4,
+              rating: rating,
             },
           ],
         };
@@ -67,19 +84,28 @@ function Page2() {
       }
     });
     localStorage.setItem("store", JSON.stringify(ans));
+    dispatch(
+      updateState({
+        data: ans
+      })
+    )
+    }
   };
-  
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get("id");
   const books = JSON.parse(localStorage.getItem("store"));
-  console.log(books);
   const data = books.filter((data) => {
     return data.id == id;
   });
-  console.log(data);
   const currentdata = data[0];
-  console.log(currentdata);
   const comments = currentdata.comment;
+
+  var total_sum = 0
+  currentdata.comment.map((ele)=>{
+     return total_sum = total_sum+ele.rating
+   })
+   var avg_rating = total_sum/currentdata.comment.length
+
   return (
     <div>
       <div className="main-div">
@@ -90,29 +116,42 @@ function Page2() {
           <h1>Title: {currentdata.title}</h1>
           <h1>Author: {currentdata.author_name}</h1>
           <h1>
-            <Rating1 datastar={currentdata.rating} />
+            <Rating1 datastar={avg_rating} />
           </h1>
         </div>
       </div>
-  
+      <div className='form-div' >
         <form onSubmit={(event) => handleSubmit(event, currentdata.id)}>
-        <textarea id="comment" type="text" placeholder='Add Comment'></textarea>
-        <button  id='add_comment' type="submit">Done</button>
+          <textarea id="comment" type="text" placeholder='Add Comment'></textarea>
+          <RatingStar
+            id="clickable"
+            clickable
+            rating={rating}
+            onRatingChange={onRatingChange}
+            size={40}
+          />
+          <div className='btn-div' >
+            <button  id='btn' type="submit"><b>Add Comment</b></button>
+          </div>
         </form>
-        
-        <div>
-            <div>
+
+        </div>
+        <div className='comment-section'>
                 <h1>Comments</h1>
             </div>
+        
+        <div>
+            
             {comments.map((comment) => {
                 return <Comment comment={comment} />;
             })}
         </div>
-        {/* <Modal
-            setmodalinput={setmodalinput}
+        <Modal
+          id = {currentdata.id}
+          handleSubmit={handleSubmit}
           onClose={() => setShow(false)}
           show={show}
-        ></Modal> */}
+        ></Modal>
     </div>
   );
 }
