@@ -1,9 +1,9 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+import Book_Card from "./Book_card";
 import Header from "./Header";
 import { useSelector, useDispatch } from "react-redux";
-import { addBook } from "../store/library";
-import dataStore from "../dataStore.json";
+import { addBook } from '../../store/library'
+import dataStore from "../../dataStore.json";
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function Homepage() {
       <Header />
       <div className="flexbox">
         {books.map((book) => {
-          return <MovieCard book={book} />;
+          return <Book_Card book={book} />;
         })}
       </div>
     </div>

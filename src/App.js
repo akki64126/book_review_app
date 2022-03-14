@@ -1,14 +1,14 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Page2 from './components/page2';
-import Homepage from './components/homepage';
+import Specific_book from './components/specific_book/Specific_book';
+import Homepage from './components/homepage/Homepage';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/page2' element={<Page2 />} />
+        <Route path='/specific_book' element={<Specific_book />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "./Modal.css";
-export default function Modal(props) {
+import "./Alert_popup.css";
+
+
+export default function Alert_popup(props) {
   if (!props.show) {
     return null;
   }

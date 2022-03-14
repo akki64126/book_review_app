@@ -1,28 +1,26 @@
 import React, { useState } from 'react'
-import Bookimg from './Bookimg'
-import Rating1 from './Rating1'
-import './movieCard.css'
+import Book_img from '../common/Book_img'
+import Rating from '../common/Rating'
+import './Book_card.css'
 import {Link,useSearchParams} from 'react-router-dom'
-// import { useDispatch } from 'react-redux'
-// import { setabcd} from "../store/library"
 
 
-export default function MovieCard(props) {
+export default function Book_Card(props) {
   var total_sum = 0
  props.book.comment.map((ele)=>{
     return total_sum = total_sum+ele.rating
   })
   var avg_rating = total_sum/props.book.comment.length
   
-  const URL = "/page2?id="+props.book.id
+  const URL = "/specific_book?id="+props.book.id
   return (
       
       <div className='movieCard'> 
         <Link to = {URL} style={{ textDecoration: 'none',color: 'white'}}>
-          <Bookimg link = {props.book.img} />
+          <Book_img  id="img-2" link = {props.book.img} />
           <h2>Title: {props.book.title}</h2>
           <h2>Author: {props.book.author_name}</h2>
-          <Rating1 datastar = {avg_rating}/>
+          <Rating datastar = {avg_rating}/>
         </Link>
       </div>
 

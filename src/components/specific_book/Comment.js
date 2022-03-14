@@ -1,6 +1,6 @@
 import React from 'react'
-import Rating from './Rating1'
-import './comment.css'
+import Rating from '../common/Rating'
+import './Comment.css'
 
 function Comment(props) {
   return (

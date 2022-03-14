@@ -1,15 +1,15 @@
-import { Rating } from 'react-simple-star-rating'
 import React, {useEffect, useState} from "react";
-import { addComment,updateState } from "../store/library";
+import { addComment,updateState } from "../../store/library";
 import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Comment from "./Comment";
-import "./page2.css";
-import Rating1 from "./Rating1";
-import Modal from './Modal';
+import "./Specific_book.css";
+import Rating from "../common/Rating";
+import Alert_popup from './Alert_popup';
 import { RatingStar } from "rating-star";
+import Book_img from '../common/Book_img';
 
-function Page2() {
+function Specific_book() {
 
   const [rating, setRating] = React.useState(0);
 
@@ -110,13 +110,13 @@ function Page2() {
     <div>
       <div className="main-div">
         <div className="img-div">
-          <img src={currentdata.img} className="img" />
+          <Book_img   id="img-1" link={currentdata.img} />
         </div>
         <div className="content-div">
           <h1>Title: {currentdata.title}</h1>
           <h1>Author: {currentdata.author_name}</h1>
           <h1>
-            <Rating1 datastar={avg_rating} />
+            <Rating datastar={avg_rating} />
           </h1>
         </div>
       </div>
@@ -146,13 +146,13 @@ function Page2() {
                 return <Comment comment={comment} />;
             })}
         </div>
-        <Modal
+        <Alert_popup
           id = {currentdata.id}
           handleSubmit={handleSubmit}
           onClose={() => setShow(false)}
           show={show}
-        ></Modal>
+        ></Alert_popup>
     </div>
   );
 }
-export default Page2;
+export default Specific_book;

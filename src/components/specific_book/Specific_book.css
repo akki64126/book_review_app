@@ -1,7 +1,3 @@
-.img{
-    height: 300px;
-    width: 300px;
-}
 .main-div{
     display: flex;
     flex-wrap:wrap;
