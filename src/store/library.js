@@ -31,5 +31,5 @@ const itemSlice = createSlice({
     },
   },
 });
-export const { addBook, addComment,updateState} = itemSlice.actions;
+export const { addBook, addComment, updateState} = itemSlice.actions;
 export default itemSlice.reducer;

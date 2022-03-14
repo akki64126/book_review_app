@@ -12,7 +12,6 @@ import Book_img from '../common/Book_img';
 function Specific_book() {
 
   const [rating, setRating] = React.useState(0);
-
   const onRatingChange = val => {
     setRating(val);
   };
@@ -37,32 +36,25 @@ function Specific_book() {
       setShow(true)
        switch(value){
            case "poor":
-            inputid.value = "p**r"
-               break
+                inputid.value = "p**r"
+                break
             case "waste":
                 inputid.value = "w***e"
                 break
             case "disgusting":
-              inputid.value = "d********g"
+                inputid.value = "d********g"
                 break
             case "horrble":
-              inputid.value = "h*****e"
+                inputid.value = "h*****e"
                 break
             case "filthy":
-              inputid.value = "f****y"
+                inputid.value = "f****y"
                 break
        }
        
     }  
     else{
-      setShow(false)
-    dispatch(
-      addComment({
-        id: id,
-        comment: value,
-        rating: rating,
-      })
-    );
+    setShow(false)
     inputid.value = ""
     setRating(0)
     const currStore = JSON.parse(localStorage.getItem("store"));
@@ -123,13 +115,7 @@ function Specific_book() {
       <div className='form-div' >
         <form onSubmit={(event) => handleSubmit(event, currentdata.id)}>
           <textarea id="comment" type="text" placeholder='Add Comment'></textarea>
-          <RatingStar
-            id="clickable"
-            clickable
-            rating={rating}
-            onRatingChange={onRatingChange}
-            size={40}
-          />
+          <RatingStar id="clickable" clickable rating={rating} onRatingChange={onRatingChange} size={40}/>
           <div className='btn-div' >
             <button  id='btn' type="submit"><b>Add Comment</b></button>
           </div>
