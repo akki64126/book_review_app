@@ -1,35 +1,42 @@
 import React from "react";
 import Book_Card from "./Book_card";
 import Header from "./Header";
-import { useSelector, useDispatch } from "react-redux";
-import { addBook } from '../../store/library'
-import dataStore from "../../dataStore.json";
+import {connect } from "react-redux";
 
-function Homepage() {
-  const dispatch = useDispatch();
-  var books = useSelector((element) => {
-    return element.allBooks;
-  });
+const mapStateToProps = (state,currentProps)=>{
+  return {
+    allBooks:state.allBooks
+  }
+}
+
+const mapDispatchToProps = (dispatch,currentProps)=>{
+  return {
+    getAllData:()=>dispatch({type:"addBook"})
+  }
+}
+
+function Homepage({getAllData,allBooks}) {
+  // var books = useSelector((element) => {
+  //   return element.allBooks;
+  // });
+  var store;
   const localSt = localStorage.getItem("store");
   if (localSt == null || localSt.length == 2) {
-    dispatch(
-      addBook({
-        allBooks: dataStore,
-      })
-    );
-    localStorage.setItem("store", JSON.stringify(books));
+    getAllData()
+    store = allBooks
+    localStorage.setItem("store", JSON.stringify(store));
   } else {
-    books = JSON.parse(localSt);
+    store = JSON.parse(localSt);
   }
   return (
     <div>
       <Header />
       <div className="flexbox">
-        {books.map((book) => {
+        {store.map((book) => {
           return <Book_Card book={book} />;
         })}
       </div>
     </div>
   );
 }
-export default Homepage;
+export default connect(mapStateToProps,mapDispatchToProps)(Homepage);

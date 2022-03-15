@@ -1,9 +1,13 @@
 
 import data from '../dataStore.json'
 
-export default reducer = (state = {allBook: []},action)=>{
+const reducer = (state = {allBooks: []},action)=>{
     switch(action.type){
         case "addBook":
-            return {allBook: data}
+            return {allBooks: data}
+        case "updateState":
+            return {allBooks:action.payload.data}
     }
 }
+
+export default reducer;

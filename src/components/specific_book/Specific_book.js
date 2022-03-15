@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { connect } from "react-redux";
 import { addComment,updateState } from "../../store/library";
 import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
@@ -9,21 +10,31 @@ import Alert_popup from './Alert_popup';
 import { RatingStar } from "rating-star";
 import Book_img from '../common/Book_img';
 
-function Specific_book() {
+const mapStateToProps = (state,currentProps)=>{
+  return {
+    allBooks:state.allBooks
+  }
+}
+
+const mapDispatchToProps = (dispatch,currentProps)=>{
+  return {
+    getAllData:()=>dispatch({type:"addBook"}),
+    updateState:(data)=>dispatch({type:"updateState",payload:{data:data}})
+  }
+}
+
+
+function Specific_book({updateState}) {
 
   const [rating, setRating] = React.useState(0);
   const onRatingChange = val => {
     setRating(val);
   };
 
-  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  useSelector((ele) => ele.allBooks);
+  var data = localStorage.getItem("store")
   useEffect(()=>{
-    const data = localStorage.getItem("store")
-    if(data!=null){
-      dispatch(updateState({data}))
-    }
+    updateState(data)
   },[])
   const handleSubmit = (e, id) => {
     e.preventDefault();
@@ -76,17 +87,15 @@ function Specific_book() {
       }
     });
     localStorage.setItem("store", JSON.stringify(ans));
-    dispatch(
-      updateState({
-        data: ans
-      })
-    )
+    updateState({
+      data: ans
+    })
     }
   };
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get("id");
   const books = JSON.parse(localStorage.getItem("store"));
-  const data = books.filter((data) => {
+  data = books.filter((data) => {
     return data.id == id;
   });
   const currentdata = data[0];
@@ -141,4 +150,4 @@ function Specific_book() {
     </div>
   );
 }
-export default Specific_book;
+export default connect(mapStateToProps,mapDispatchToProps)(Specific_book);
