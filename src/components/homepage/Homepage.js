@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Book_Card from "./Book_card";
 import Header from "./Header";
 import {connect } from "react-redux";
 
 const mapStateToProps = (state,currentProps)=>{
+
   return {
     allBooks:state.allBooks
   }
@@ -16,12 +17,9 @@ const mapDispatchToProps = (dispatch,currentProps)=>{
 }
 
 function Homepage({getAllData,allBooks}) {
-  // var books = useSelector((element) => {
-  //   return element.allBooks;
-  // });
   var store;
   const localSt = localStorage.getItem("store");
-  if (localSt == null || localSt.length == 2) {
+  if (localSt == null ) {
     getAllData()
     store = allBooks
     localStorage.setItem("store", JSON.stringify(store));

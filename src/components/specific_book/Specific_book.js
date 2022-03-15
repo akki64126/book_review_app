@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { connect } from "react-redux";
-import { addComment,updateState } from "../../store/library";
-import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Comment from "./Comment";
 import "./Specific_book.css";
@@ -15,14 +13,12 @@ const mapStateToProps = (state,currentProps)=>{
     allBooks:state.allBooks
   }
 }
-
 const mapDispatchToProps = (dispatch,currentProps)=>{
   return {
     getAllData:()=>dispatch({type:"addBook"}),
     updateState:(data)=>dispatch({type:"updateState",payload:{data:data}})
   }
 }
-
 
 function Specific_book({updateState}) {
 
@@ -39,30 +35,27 @@ function Specific_book({updateState}) {
   const handleSubmit = (e, id) => {
     e.preventDefault();
     var value = document.getElementById("comment").value;
-    console.log(rating)
-
     var inputid = document.getElementById("comment")
 
     if(value=="poor"||value=="waste"||value=="disgusting"||value=="horrible"||value=="filthy"){
       setShow(true)
-       switch(value){
-           case "poor":
-                inputid.value = "p**r"
-                break
-            case "waste":
-                inputid.value = "w***e"
-                break
-            case "disgusting":
-                inputid.value = "d********g"
-                break
-            case "horrble":
-                inputid.value = "h*****e"
-                break
-            case "filthy":
-                inputid.value = "f****y"
-                break
-       }
-       
+      switch(value){
+        case "poor":
+          inputid.value = "p**r"
+          break
+        case "waste":
+          inputid.value = "w***e"
+          break
+        case "disgusting":
+          inputid.value = "d********g"
+          break
+        case "horrble":
+          inputid.value = "h*****e"
+          break
+        case "filthy":
+          inputid.value = "f****y"
+          break
+      }
     }  
     else{
     setShow(false)
