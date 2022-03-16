@@ -1,12 +1,19 @@
 import data from '../dataStore.json'
 
-const reducer = (initialState = {allBooks: []},action)=>{
+export const homeReducer = (initialState = {allBooks: []},action)=>{
     switch(action.type){
         case "addBook":
             return {allBooks: data}
-        case "updateState":
-            return {allBooks: action.payload.data}
+        default:
+            return initialState
     }
 }
 
-export default reducer;
+export const updateReducer = (initialState = {allBooks: []},action)=>{
+    switch(action.type){
+        case "updateState":
+            return {allBooks: action.payload.data}
+        default:
+            return initialState
+    }
+}

@@ -8,12 +8,12 @@ import Alert_popup from './Alert_popup';
 import { RatingStar } from "rating-star";
 import Book_img from '../common/Book_img';
 
-const mapStateToProps = (state,currentProps)=>{
+const mapStateToProps = (state)=>{
   return {
-    allBooks:state.allBooks
+    allBooks:state.home.allBooks
   }
 }
-const mapDispatchToProps = (dispatch,currentProps)=>{
+const mapDispatchToProps = (dispatch)=>{
   return {
     getAllData:()=>dispatch({type:"addBook"}),
     updateState:(data)=>dispatch({type:"updateState",payload:{data:data}})
@@ -29,9 +29,6 @@ function Specific_book({updateState}) {
 
   const [show, setShow] = useState(false);
   var data = localStorage.getItem("store")
-  useEffect(()=>{
-    updateState(data)
-  },[])
   const handleSubmit = (e, id) => {
     e.preventDefault();
     var value = document.getElementById("comment").value;

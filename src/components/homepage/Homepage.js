@@ -3,24 +3,24 @@ import Book_Card from "./Book_card";
 import Header from "./Header";
 import {connect } from "react-redux";
 
-const mapStateToProps = (state,currentProps)=>{
-
+const mapStateToProps = (state)=>{
   return {
-    allBooks:state.allBooks
+    allBooks:state.home.allBooks
   }
 }
-
-const mapDispatchToProps = (dispatch,currentProps)=>{
+const mapDispatchToProps = (dispatch)=>{
   return {
     getAllData:()=>dispatch({type:"addBook"})
   }
 }
 
 function Homepage({getAllData,allBooks}) {
+  useEffect(()=>{
+    getAllData()
+  },[])
   var store;
   const localSt = localStorage.getItem("store");
   if (localSt == null ) {
-    getAllData()
     store = allBooks
     localStorage.setItem("store", JSON.stringify(store));
   } else {
